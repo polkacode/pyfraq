@@ -1,2 +1,4 @@
 # pyfraq
-playing around with fractals 
+Playing around with fractals 
+
+This is the Master Branch.
