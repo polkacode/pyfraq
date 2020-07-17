@@ -1,4 +1,9 @@
 # pyfraq
 Playing around with fractals 
 
-This is the Master Branch.
+I'm trying to build a fractal explorer.
+
+Todo:
+- providing nice color palette
+- SMP support
+
