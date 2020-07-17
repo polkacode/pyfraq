@@ -198,3 +198,4 @@ for i in range(0, images):
         xmax = xdest + frame/zoom
         ymin = ydest - frame/zoom
         ymax = ydest + frame/zoom
+# Und nu?
