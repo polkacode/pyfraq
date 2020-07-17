@@ -1,4 +1,4 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 # Load needed modules
 
 import sys,getopt
@@ -7,14 +7,6 @@ import math
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
-
-
-
-xdest = float(sys.argv[1])
-ydest = float(sys.argv[2])
-frame = float(sys.argv[3])
-iterations = int(sys.argv[4])
-images = int(sys.argv[5])
 
 #############################################################################################
 # function to calculate the color of the pixel
@@ -124,16 +116,16 @@ def Draw_Mandel(xmin,xmax,ymin,ymax,resx,resy,count):
                 img.putpixel((countx,county),(0,255,0 ))
                 # print countx,stepsx,count, xmin, "<",xx,">",xmax
                 correctx = -1*(xx-stepsx)
-                # print "CORR:", correctx 
+                # print "CORR:", correctx
             # mark the middle of the screen white
             if (countx == resx/2) | (county == resy/2) :
                 img.putpixel((countx,county),(255,255,255))
-            # if the coordinate of interest is too far away from the view center:                 
+            # if the coordinate of interest is too far away from the view center:
             if (xx >= xdest) & (countx == resx/2) & (county == resy/2):
                 print ("Alarm! Mitte bei: ", xx, "> ", xdest,"\n")
                 alarm = 1
             #    correct = stepsx
-            
+
 
             # increase to the next pixel on the X-line
             xx = xx + stepsx
@@ -158,25 +150,35 @@ def Draw_Mandel(xmin,xmax,ymin,ymax,resx,resy,count):
 #############################################################################################
 
 # the color depth of the pixels
-#iterations = 1254 
+#iterations = 1254
+
+
+# Read in arguments
+xdest = float(sys.argv[1])
+ydest = float(sys.argv[2])
+frame = float(sys.argv[3])
+iterations = int(sys.argv[4])
+images = int(sys.argv[5])
+
+
 resx = 220
 resy = 220
 
- 
+
 depth = 0.0
 
 offsetx = 0
 
 
 xmin = xdest - frame
-xmax = xdest + frame 
+xmax = xdest + frame
 ymin = ydest - frame
 ymax = ydest + frame
 
 
 
 # How many images are to be rendered?
-#images = 1 
+#images = 1
 zoom = 2
 # Do we know if the destitnation coordinates are in
 # the center of the image?
@@ -191,30 +193,8 @@ for i in range(0, images):
         Draw_Mandel(xmin,xmax,ymin,ymax,resx-1,resy-1,i)
         img.show()
 
-        zoom = zoom * 2 
+        zoom = zoom * 2
         xmin = xdest - frame/zoom
         xmax = xdest + frame/zoom
         ymin = ydest - frame/zoom
         ymax = ydest + frame/zoom
-
-        # save rendered images here:
-        # img.save("output/image"+str(i)+".png","PNG")
-
-        # raw_input("Press Enter to continue...")
-
-        # if (alarm == 1) & (xmin > -2) :
-            # Kurskorrektur Mathfoo!!!
-        #    print "Action! xmin:",xmin,"xmax:", xmax, xdest, correctx
-        #    print "Distance:",(xmin - xmax)/2
-        #    #xmin = xmin + (xmin - xmax)/2
-        #    #ymax = ymax + (ymin - ymax)/2
-
-        #   xmin = xmin * zoom
-        #   xmax = xmax * zoom
-        #   ymin = ymin * zoom
-        #   ymax = ymax * zoom
-#        print ("CORR_OBEN:",correctx)
-#        xmin = (xmin - correctx) / 1.8
-#        xmax = (xmax - correctx) / 1.8
-#        ymin = ymin / 1.8
-#        ymax = ymax / 1.8
