@@ -9,10 +9,10 @@ Todo:
 
 
 Intersting reads:
-Mandelbrot: \\
-https://superliminal.com/fractals/mbrot/mbrot.htm \\
-http://www.cuug.ab.ca/dewara/mandelbrot/Mandelbrowser.html \\
-http://paulbourke.net/fractals/mandelbrot/ \\
+Mandelbrot: \
+https://superliminal.com/fractals/mbrot/mbrot.htm \
+http://www.cuug.ab.ca/dewara/mandelbrot/Mandelbrowser.html \
+http://paulbourke.net/fractals/mandelbrot/ \
 
 Colors:
 https://stackoverflow.com/questions/25668828/how-to-create-colour-gradient-in-python
